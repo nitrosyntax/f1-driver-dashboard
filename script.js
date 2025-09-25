@@ -75,4 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Initial setup
 	applyTheme(currentTheme);
+	document.documentElement.classList.add("scroll-smooth");
 });

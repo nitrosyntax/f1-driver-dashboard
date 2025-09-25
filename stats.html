@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stats</title>
+    <title>F1 Driver Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -62,185 +62,39 @@
         </div>
     </nav>
 
-    <main class="pt-24 pb-12">
-        <div class="container mx-auto px-4 sm:px-8">
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-8 text-center">Statistics Showcase</h1>
-            
-            <!-- 4x5 Grid for Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div id="card-1" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+1" alt="Placeholder Image 1" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #1</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
+    <main class="pt-24">
+        <div class="container mx-auto p-8">
+            <div class="bg-white dark:bg-zinc-900 p-12 rounded-lg shadow-lg text-center border-t-4 border-red-600">
+                <h1 class="text-5xl font-bold text-gray-800 dark:text-white mb-4">
+                    Race by the Numbers
+                </h1>
+                <p class="mt-3 text-gray-600 dark:text-gray-300 text-lg">Behind every checkered flag, there’s a spreadsheet — dive into the numbers that drive the race.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-16 ">
+                <div class="flex-center flex-auto w-full mt-16 bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg text-center">
+                    <h2 class="text-2xl font-extrabold text-gray-800 dark:text-white mb-2">The Season in the Rearview</h2>
+                    <p class="mb-4 text-gray-600 dark:text-gray-300">
+                        Look back at 2024 — the battles fought, the points scored, and the speed that set the tone for today.
+                    </p>
+                    <a href="stats2024.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                        Relive 2024
+                    </a>
                 </div>
-                <!-- Card 2 -->
-                <div id="card-2" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+2" alt="Placeholder Image 2" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #2</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div id="card-3" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+3" alt="Placeholder Image 3" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #3</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div id="card-4" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+4" alt="Placeholder Image 4" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #4</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div id="card-5" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+5" alt="Placeholder Image 5" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #5</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div id="card-6" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+6" alt="Placeholder Image 6" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #6</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 7 -->
-                <div id="card-7" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+7" alt="Placeholder Image 7" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #7</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 8 -->
-                <div id="card-8" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+8" alt="Placeholder Image 8" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #8</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 9 -->
-                <div id="card-9" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+9" alt="Placeholder Image 9" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #9</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 10 -->
-                <div id="card-10" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+10" alt="Placeholder Image 10" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #10</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 11 -->
-                <div id="card-11" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+11" alt="Placeholder Image 11" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #11</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 12 -->
-                <div id="card-12" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+12" alt="Placeholder Image 12" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #12</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 13 -->
-                <div id="card-13" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+13" alt="Placeholder Image 13" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #13</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 14 -->
-                <div id="card-14" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+14" alt="Placeholder Image 14" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #14</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 15 -->
-                <div id="card-15" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+15" alt="Placeholder Image 15" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #15</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 16 -->
-                <div id="card-16" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+16" alt="Placeholder Image 16" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #16</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 17 -->
-                <div id="card-17" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+17" alt="Placeholder Image 17" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #17</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 18 -->
-                <div id="card-18" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+18" alt="Placeholder Image 18" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #18</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 19 -->
-                <div id="card-19" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+19" alt="Placeholder Image 19" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #19</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
-                </div>
-                <!-- Card 20 -->
-                <div id="card-20" class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/171717/FFF?text=Image+20" alt="Placeholder Image 20" class="w-full h-40 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Item #20</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">This is a placeholder description for the item.</p>
-                    </div>
+
+                <div class="flex-center flex-auto w-full mt-16 bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg text-center">
+                    <h2 class="text-2xl font-extrabold text-gray-800 dark:text-white mb-2">On the Grid: 2025</h2>
+                    <p class="mb-4 text-gray-600 dark:text-gray-300">
+                        Stay up to speed with the current championship — live data, fresh stats, and the story as it unfolds.
+                    </p>
+                    <a href="stats2025.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                        Live 2025
+                    </a>
                 </div>
             </div>
+
         </div>
     </main>
-
-    <footer>
-        <div class="container mx-auto text-center py-6 px-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                made by
-                <a href="https://github.com/nitrosyntax/" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">nitrosyntax</a> and 
-                <a href="https://github.com/gh4nti/" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a>
-            </p>
-        </div>
-    </footer>
     
     <script src="script.js"></script>
 </body>
