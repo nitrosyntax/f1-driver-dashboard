@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Driver Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        // Inline script to set theme instantly, preventing FOUC (Flash of Unstyled Content)
+        const theme = localStorage.getItem('theme') || 'system';
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        /* Updated accent color to dark gray */
+        .nav-link.active { color: #6b7280; border-bottom: 2px solid #6b7280; }
+        .dark .nav-link.active { border-bottom-color: #9ca3af; color: #9ca3af; }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+
+    <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 px-3 py-2 text-sm font-medium active">Home</a>
+                    <a href="stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 px-3 py-2 text-sm font-medium">Stats</a>
+                    <a href="contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 px-3 py-2 text-sm font-medium">Contact</a>
+                    <button id="theme-toggle" class="text-gray-600 dark:text-gray-300 focus:outline-none text-lg">
+                        <i class="fas fa-sun hidden" id="theme-icon-light"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="text-gray-600 dark:text-gray-300 focus:outline-none mr-4 text-lg">
+                        <i class="fas fa-sun hidden" id="theme-icon-light-mobile"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark-mobile"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system-mobile"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
+            <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+        <div class="container mx-auto p-8">
+            <!-- hero -->
+            <div class="bg-white dark:bg-zinc-900 p-12 rounded-lg shadow-lg text-center border-t-4 border-red-600">
+                <h1 class="text-5xl font-extrabold text-gray-800 dark:text-white mb-4 tracking-wide">Welcome to the F1 Dashboard</h1>
+                <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                    This is your one-stop hub to track your favorite <span class="font-semibold">Formula 1 driver</span>'s past and present stats across the 2024 and 2025 seasons.<br>
+                    Speeds, points, podiums, and more - all in one place
+                    <i class="fa-duotone fa-solid fa-flag-checkered"></i>
+                </p>
+            </div>
+
+            <!-- Feature Highlights -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fa-solid fa-user text-3xl text-red-600 mb-4"></i>
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Driver Profiles</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Detailed insights into each F1 driver’s stats and history.</p>
+                </div>
+                <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fa-solid fa-gauge-high text-3xl text-red-600 mb-4"></i>
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Fastest Laps</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Track and compare record lap times from each season.</p>
+                </div>
+                <div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <i class="fa-solid fa-trophy text-3xl text-red-600 mb-4"></i>
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Season Points</h2>
+                    <p class="text-gray-600 dark:text-gray-300">See where your favorite drivers stand in the championship race.</p>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="mt-16 bg-red-600 text-white p-8 rounded-lg shadow-lg text-center">
+                <h2 class="text-2xl font-bold mb-3">Relive the Speed. Track the Glory.</h2>
+                <p class="mb-4">Dive into the numbers that define legends. Start exploring driver stats now.</p>
+                <a href="stats.html" class="px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-200 transition">
+                    Explore Drivers
+                </a>
+            </div>
+
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
