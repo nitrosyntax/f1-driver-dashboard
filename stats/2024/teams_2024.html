@@ -48,7 +48,6 @@
         .dark .group:hover .driver-name-hover {
             color: var(--team-color-dark);
         }
-        /* New class for team-colored text */
         .team-color-text { color: var(--team-color-light); }
         .dark .team-color-text { color: var(--team-color-dark); }
     </style>
@@ -117,11 +116,8 @@
             const teamName = params.get('name');
 
             const countryCodeMapping = {
-                'Thailand': 'th', 'Spain': 'es', 'United Kingdom': 'gb', 'Finland': 'fi',
-                'Argentina': 'ar', 'Australia': 'au', 'France': 'fr', 'Germany': 'de',
-                'New Zealand': 'nz', 'Monaco': 'mc', 'Denmark': 'dk', 'Mexico': 'mx',
-                'Japan': 'jp', 'Netherlands': 'nl', 'China': 'cn', 'USA': 'us', 'Canada': 'ca',
-                'Italy': 'it', 'Switzerland': 'ch', 'United States': 'us'
+                'United Kingdom': 'gb', 'Italy': 'it', 'Switzerland': 'ch', 'United States': 'us',
+                'Austria': 'at', 'France': 'fr', 'Luxembourg': 'lu', 'Japan': 'jp'
             };
 
             if (!teamName) {
@@ -152,6 +148,9 @@
                 const teamCountryName = team.base.split(', ')[1];
                 const countryCode = countryCodeMapping[teamCountryName];
                 const flagUrl = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : '';
+
+                const principalCountryCode = countryCodeMapping[team.teamPrincipalCountry];
+                const principalFlagUrl = principalCountryCode ? `https://flagcdn.com/w40/${principalCountryCode}.png` : '';
 
                 const principalTooltipHTML = `
                     <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
@@ -186,7 +185,7 @@
                                 <img src="${team.logo}" alt="${team.name} logo" class="max-w-full max-h-full object-contain dark:invert">
                             </div>
                             <div class="flex-grow">
-                                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white">${team.name}</h1>
+                                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white">${team.name}</h1>
                                 <div class="flex items-center justify-center md:justify-start mt-2">
                                     ${flagUrl ? `<div class="w-6 h-5 mr-3 flex-shrink-0 flex items-center justify-center"><img src="${flagUrl}" alt="${team.base}" class="max-h-full max-w-full rounded-sm"></div>` : ''}
                                     <p class="text-lg text-gray-500 dark:text-gray-400">${team.base}</p>
@@ -199,7 +198,10 @@
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                                 <div class="relative bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg group cursor-pointer">
                                     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Team Principal</p>
-                                    <p class="text-xl font-bold text-gray-800 dark:text-white">${team.teamPrincipal}</p>
+                                    <div class="flex items-center justify-center mt-1">
+                                        ${principalFlagUrl ? `<div class="w-5 h-4 mr-2 flex-shrink-0 flex items-center justify-center"><img src="${principalFlagUrl}" alt="${team.teamPrincipalCountry}" class="max-h-full max-w-full rounded-sm"></div>` : ''}
+                                        <p class="text-xl font-bold text-gray-800 dark:text-white">${team.teamPrincipal}</p>
+                                    </div>
                                     ${principalTooltipHTML}
                                 </div>
                                 <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
