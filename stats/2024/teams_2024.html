@@ -116,6 +116,14 @@
             const params = new URLSearchParams(window.location.search);
             const teamName = params.get('name');
 
+            const countryCodeMapping = {
+                'Thailand': 'th', 'Spain': 'es', 'United Kingdom': 'gb', 'Finland': 'fi',
+                'Argentina': 'ar', 'Australia': 'au', 'France': 'fr', 'Germany': 'de',
+                'New Zealand': 'nz', 'Monaco': 'mc', 'Denmark': 'dk', 'Mexico': 'mx',
+                'Japan': 'jp', 'Netherlands': 'nl', 'China': 'cn', 'USA': 'us', 'Canada': 'ca',
+                'Italy': 'it', 'Switzerland': 'ch', 'United States': 'us'
+            };
+
             if (!teamName) {
                 container.innerHTML = '<p class="text-center text-red-500">No team specified.</p>';
                 return;
@@ -136,24 +144,40 @@
                     return;
                 }
                 
-                // Set the CSS variables for the driver name hover effect
                 const palette = team.palette;
                 const root = document.documentElement;
                 root.style.setProperty('--team-color-light', palette.lightText);
                 root.style.setProperty('--team-color-dark', palette.darkText);
+                
+                const teamCountryName = team.base.split(', ')[1];
+                const countryCode = countryCodeMapping[teamCountryName];
+                const flagUrl = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : '';
 
+                const principalTooltipHTML = `
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+                        <img src="${team.teamPrincipalImage}" alt="${team.teamPrincipal}" class="w-full h-full object-cover rounded-md">
+                    </div>
+                `;
 
-                const driverCardsHTML = teamDrivers.map(driver => `
+                const driverCardsHTML = teamDrivers.map(driver => {
+                    const driverCountryCode = countryCodeMapping[driver.country];
+                    const driverFlagUrl = driverCountryCode ? `https://flagcdn.com/w40/${driverCountryCode}.png` : '';
+
+                    return `
                     <a href="driver_2024.html?name=${encodeURIComponent(driver.name)}" class="group block bg-gray-50 dark:bg-zinc-800 rounded-lg shadow transform hover:scale-105 transition-transform duration-300 overflow-hidden">
                         <div class="p-5 flex items-center space-x-4">
                             <div class="driver-number text-5xl font-bold team-color-text">${driver.number}</div>
                             <div>
                                 <h3 class="driver-name-hover text-lg font-bold text-gray-800 dark:text-white transition-colors duration-300">${driver.name}</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm">${driver.country}</p>
+                                <div class="flex items-center mt-1">
+                                    ${driverFlagUrl ? `<div class="w-5 h-4 mr-2 flex-shrink-0 flex items-center justify-center"><img src="${driverFlagUrl}" alt="${driver.country}" class="max-h-full max-w-full rounded-sm"></div>` : ''}
+                                    <p class="text-gray-500 dark:text-gray-400 text-sm">${driver.country}</p>
+                                </div>
                             </div>
                         </div>
                     </a>
-                `).join('');
+                `;
+                }).join('');
                 
                 const teamHTML = `
                     <div id="team-card" class="bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg border-t-4" style="border-color: ${palette.lightText};">
@@ -163,16 +187,20 @@
                             </div>
                             <div class="flex-grow">
                                 <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white">${team.name}</h1>
-                                <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">${team.base}</p>
+                                <div class="flex items-center justify-center md:justify-start mt-2">
+                                    ${flagUrl ? `<div class="w-6 h-5 mr-3 flex-shrink-0 flex items-center justify-center"><img src="${flagUrl}" alt="${team.base}" class="max-h-full max-w-full rounded-sm"></div>` : ''}
+                                    <p class="text-lg text-gray-500 dark:text-gray-400">${team.base}</p>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="mt-8 pt-8 border-t border-gray-200 dark:border-zinc-700">
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Team Info</h2>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                                <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                                <div class="relative bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg group cursor-pointer">
                                     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Team Principal</p>
                                     <p class="text-xl font-bold text-gray-800 dark:text-white">${team.teamPrincipal}</p>
+                                    ${principalTooltipHTML}
                                 </div>
                                 <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
                                     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Chassis</p>
@@ -181,10 +209,6 @@
                                 <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
                                     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Power Unit</p>
                                     <p class="text-xl font-bold text-gray-800 dark:text-white">${team.powerUnit}</p>
-                                </div>
-                                 <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
-                                    <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Base</p>
-                                    <p class="text-xl font-bold text-gray-800 dark:text-white">${team.base}</p>
                                 </div>
                             </div>
                         </div>

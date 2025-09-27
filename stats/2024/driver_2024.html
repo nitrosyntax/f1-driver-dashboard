@@ -167,7 +167,6 @@
                     return;
                 }
                 
-                // Set CSS Variables directly from the team's palette in the JSON
                 const palette = team.palette;
                 const root = document.documentElement;
                 root.style.setProperty('--team-color-light', palette.lightText);
@@ -194,8 +193,8 @@
                     `).join('');
 
                     winsTooltipHTML = `
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max p-3 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
-                            <h4 class="font-bold border-b border-zinc-300 dark:border-zinc-600 pb-1 mb-2 text-left">Races Won</h4>
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max p-4 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+                            <h4 class="font-bold text-sm border-b border-zinc-300 dark:border-zinc-600 pb-1 mb-2 text-left">Races Won</h4>
                             <div class="space-y-1">
                                 ${raceList}
                             </div>
@@ -203,7 +202,7 @@
                     `;
                 } else {
                      winsTooltipHTML = `
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-3 py-2 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-4 py-3 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
                                 No wins.
                             </div>
                         `;
