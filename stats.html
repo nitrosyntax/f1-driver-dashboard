@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics</title>
+    <title>PilotProfile | F1 Driver Dashboard</title>
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -101,7 +103,25 @@
 
         </div>
     </main>
-    
+
+    <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
+        <div class="container mx-auto text-center py-6 px-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                &copy; <span id="year"></span> PilotProfile. All Rights Reserved.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Made by 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">nitrosyntax</a>.
+            </p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
+    <script>
+        // Sets the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    
 </body>
 </html>
