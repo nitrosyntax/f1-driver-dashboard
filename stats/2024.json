@@ -1,6 +1,7 @@
 [
 	{
 		"name": "Alexander Albon",
+		"number": 23,
 		"team": "Williams Racing",
 		"country": "Thailand",
 		"points": 12,
@@ -13,6 +14,7 @@
 	},
 	{
 		"name": "Fernando Alonso",
+		"number": 14,
 		"team": "Aston Martin Aramco Formula One Team",
 		"country": "Spain",
 		"points": 70,
@@ -25,6 +27,7 @@
 	},
 	{
 		"name": "Oliver Bearman",
+		"number": 38,
 		"team": "MoneyGram Haas F1 Team",
 		"country": "United Kingdom",
 		"points": 7,
@@ -37,6 +40,7 @@
 	},
 	{
 		"name": "Valtteri Bottas",
+		"number": 77,
 		"team": "Stake F1 Team Kick Sauber",
 		"country": "Finland",
 		"points": 0,
@@ -49,6 +53,7 @@
 	},
 	{
 		"name": "Franco Colapinto",
+		"number": 43,
 		"team": "Williams Racing",
 		"country": "Argentina",
 		"points": 5,
@@ -61,6 +66,7 @@
 	},
 	{
 		"name": "Jack Doohan",
+		"number": 61,
 		"team": "BWT Alpine F1 Team",
 		"country": "Australia",
 		"points": 0,
@@ -73,6 +79,7 @@
 	},
 	{
 		"name": "Pierre Gasly",
+		"number": 10,
 		"team": "BWT Alpine F1 Team",
 		"country": "France",
 		"points": 42,
@@ -85,6 +92,7 @@
 	},
 	{
 		"name": "Lewis Hamilton",
+		"number": 44,
 		"team": "Mercedes-AMG PETRONAS Formula One Team",
 		"country": "United Kingdom",
 		"points": 223,
@@ -109,6 +117,7 @@
 	},
 	{
 		"name": "Nico Hulkenberg",
+		"number": 27,
 		"team": "MoneyGram Haas F1 Team",
 		"country": "Germany",
 		"points": 41,
@@ -121,6 +130,7 @@
 	},
 	{
 		"name": "Liam Lawson",
+		"number": 30,
 		"team": "Visa Cash App RB Formula One Team",
 		"country": "New Zealand",
 		"points": 4,
@@ -133,6 +143,7 @@
 	},
 	{
 		"name": "Charles Leclerc",
+		"number": 16,
 		"team": "Scuderia Ferrari",
 		"country": "Monaco",
 		"points": 356,
@@ -162,6 +173,7 @@
 	},
 	{
 		"name": "Kevin Magnussen",
+		"number": 20,
 		"team": "MoneyGram Haas F1 Team",
 		"country": "Denmark",
 		"points": 16,
@@ -174,6 +186,7 @@
 	},
 	{
 		"name": "Lando Norris",
+		"number": 4,
 		"team": "McLaren F1 Team",
 		"country": "United Kingdom",
 		"points": 374,
@@ -208,6 +221,7 @@
 	},
 	{
 		"name": "Esteban Ocon",
+		"number": 31,
 		"team": "BWT Alpine F1 Team",
 		"country": "France",
 		"points": 23,
@@ -220,6 +234,7 @@
 	},
 	{
 		"name": "Sergio Perez",
+		"number": 11,
 		"team": "Oracle RedBull Racing",
 		"country": "Mexico",
 		"points": 152,
@@ -232,6 +247,7 @@
 	},
 	{
 		"name": "Oscar Piastri",
+		"number": 81,
 		"team": "McLaren F1 Team",
 		"country": "Australia",
 		"points": 292,
@@ -256,6 +272,7 @@
 	},
 	{
 		"name": "Daniel Ricciardo",
+		"number": 3,
 		"team": "Visa Cash App RB Formula One Team",
 		"country": "Australia",
 		"points": 12,
@@ -268,6 +285,7 @@
 	},
 	{
 		"name": "George Russell",
+		"number": 63,
 		"team": "Mercedes-AMG PETRONAS Formula One Team",
 		"country": "United Kingdom",
 		"points": 245,
@@ -292,6 +310,7 @@
 	},
 	{
 		"name": "Carlos Sainz",
+		"number": 55,
 		"team": "Scuderia Ferrari",
 		"country": "Spain",
 		"points": 290,
@@ -316,6 +335,7 @@
 	},
 	{
 		"name": "Logan Sargeant",
+		"number": 2,
 		"team": "Williams Racing",
 		"country": "USA",
 		"points": 0,
@@ -328,6 +348,7 @@
 	},
 	{
 		"name": "Lance Stroll",
+		"number": 18,
 		"team": "Aston Martin Aramco Formula One Team",
 		"country": "Canada",
 		"points": 24,
@@ -340,6 +361,7 @@
 	},
 	{
 		"name": "Yuki Tsunoda",
+		"number": 22,
 		"team": "Visa Cash App RB Formula One Team",
 		"country": "Japan",
 		"points": 30,
@@ -352,6 +374,7 @@
 	},
 	{
 		"name": "Max Verstappen",
+		"number": 1,
 		"team": "Oracle RedBull Racing",
 		"country": "Netherlands",
 		"points": 437,
@@ -411,6 +434,7 @@
 	},
 	{
 		"name": "Guanyu Zhou",
+		"number": 24,
 		"team": "Stake F1 Team Kick Sauber",
 		"country": "China",
 		"points": 4,
