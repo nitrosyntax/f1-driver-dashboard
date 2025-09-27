@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Stats</title>
+    <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script>
+        // Inline script to set theme instantly, preventing FOUC (Flash of Unstyled Content)
+        const theme = localStorage.getItem('theme') || 'system';
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        /* New active link style: Rounded rectangular box */
+        .nav-link.active {
+            background-color: #fee2e2; /* red-100 */
+            color: #b91c1c; /* red-700 */
+            border-radius: 0.375rem; /* rounded-md */
+        }
+        .dark .nav-link.active {
+            background-color: #b91c1c; /* red-700 */
+            color: #ffffff; /* white */
+        }
+        .driver-number {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1;
+        }
+
+        /* CSS Variables for Dynamic Team Colors */
+        :root {
+            --team-color-light: #dc2626; 
+            --team-color-dark: #f87171;  
+            --team-bg-light: #fee2e2;   
+            --team-bg-dark: rgba(220, 38, 38, 0.4); 
+            --team-ring-light: #fecaca; 
+            --team-ring-dark: #b91c1c;   
+        }
+        .team-color-text { color: var(--team-color-light); }
+        .dark .team-color-text { color: var(--team-color-dark); }
+
+        .team-color-bg { background-color: var(--team-bg-light); }
+        .dark .team-color-bg { background-color: var(--team-bg-dark); }
+        
+        .team-color-ring { --tw-ring-color: var(--team-ring-light); }
+        .dark .team-color-ring { --tw-ring-color: var(--team-ring-dark); }
+
+        .team-link-color { color: #6b7280; } 
+        .dark .team-link-color { color: #9ca3af; } 
+        .group:hover .team-link-color { color: var(--team-color-light); }
+        .dark .group:hover .team-link-color { color: var(--team-color-dark); }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../../index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
+                    <a href="../../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    <button id="theme-toggle" class="text-red-600 dark:text-red-500 focus:outline-none text-lg w-6 h-6 flex items-center justify-center">
+                        <i class="fas fa-sun hidden" id="theme-icon-light"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="text-red-600 dark:text-red-500 focus:outline-none mr-4 text-lg w-6 h-6 flex items-center justify-center">
+                        <i class="fas fa-sun hidden" id="theme-icon-light-mobile"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark-mobile"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system-mobile"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900">
+            <a href="../../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="../../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
+            <a href="../../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12 flex-grow">
+        <div class="container mx-auto p-8">
+            <!-- Driver details will be injected here by JavaScript -->
+            <div id="driver-details-container">
+                <!-- Loading driver details... -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
+        <div class="container mx-auto text-center py-6 px-4">
+             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Made by 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">nitrosyntax</a>.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="../../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('driver-details-container');
+            const params = new URLSearchParams(window.location.search);
+            const driverName = params.get('name');
+
+            const countryCodeMapping = {
+                'Thailand': 'th', 'Spain': 'es', 'United Kingdom': 'gb', 'Finland': 'fi',
+                'Argentina': 'ar', 'Australia': 'au', 'France': 'fr', 'Germany': 'de',
+                'New Zealand': 'nz', 'Monaco': 'mc', 'Denmark': 'dk', 'Mexico': 'mx',
+                'Japan': 'jp', 'Netherlands': 'nl', 'China': 'cn', 'USA': 'us', 'Canada': 'ca'
+            };
+
+            const teamLogoMapping = {
+                'Williams Racing': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/williams.png',
+                'Aston Martin Aramco Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/aston%20martin.png',
+                'MoneyGram Haas F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/haas.png',
+                'Stake F1 Team Kick Sauber': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1704282202/content/dam/fom-website/2018-redesign-assets/team%20logos/kick%20sauber.png',
+                'BWT Alpine F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/alpine.png',
+                'Mercedes-AMG PETRONAS Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/mercedes.png',
+                'Visa Cash App RB Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1706118021/content/dam/fom-website/2018-redesign-assets/team%20logos/rb.png',
+                'Scuderia Ferrari': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/ferrari.png',
+                'McLaren F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/mclaren.png',
+                'Oracle RedBull Racing': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/red%20bull.png'
+            };
+
+            if (!driverName) {
+                container.innerHTML = '<p class="text-center text-red-500">No driver specified.</p>';
+                return;
+            }
+
+            document.title = `${driverName} - 2024 Stats`;
+
+            Promise.all([
+                fetch('2024.json').then(res => res.json()),
+                fetch('teams_2024.json').then(res => res.json())
+            ])
+            .then(([drivers, teams]) => {
+                const driver = drivers.find(d => d.name === driverName);
+                const team = teams.find(t => t.name === driver.team);
+
+                if (!driver || !team) {
+                    container.innerHTML = `<p class="text-center text-red-500">Driver or Team data not found.</p>`;
+                    return;
+                }
+                
+                // Set CSS Variables directly from the team's palette in the JSON
+                const palette = team.palette;
+                const root = document.documentElement;
+                root.style.setProperty('--team-color-light', palette.lightText);
+                root.style.setProperty('--team-color-dark', palette.darkText);
+                root.style.setProperty('--team-bg-light', palette.lightBg);
+                root.style.setProperty('--team-bg-dark', palette.darkBg);
+                root.style.setProperty('--team-ring-light', palette.lightRing);
+                root.style.setProperty('--team-ring-dark', palette.darkRing);
+
+                const countryCode = countryCodeMapping[driver.country];
+                const flagUrl = countryCode ? `https://flagcdn.com/w40/${countryCode}.png` : '';
+                const teamLogoUrl = teamLogoMapping[driver.team] || '';
+                const teamPageUrl = `teams_2024.html?name=${encodeURIComponent(driver.team)}`;
+                
+                let winsTooltipHTML = '';
+                if (driver.wins > 0 && driver.racesWon && driver.racesWon.length > 0) {
+                    const raceList = driver.racesWon.map(race => `
+                        <div class="flex items-center text-left">
+                            <div class="w-5 h-4 mr-2 flex-shrink-0 flex items-center justify-center">
+                                <img src="https://flagcdn.com/w20/${race.countryCode}.png" alt="${race.countryCode}" class="max-h-full max-w-full rounded-sm">
+                            </div>
+                            <span>${race.raceName} (${race.circuitName})</span>
+                        </div>
+                    `).join('');
+
+                    winsTooltipHTML = `
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max p-3 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
+                            <h4 class="font-bold border-b border-zinc-300 dark:border-zinc-600 pb-1 mb-2 text-left">Races Won</h4>
+                            <div class="space-y-1">
+                                ${raceList}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                     winsTooltipHTML = `
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-3 py-2 bg-white text-zinc-800 border border-zinc-200 dark:bg-zinc-800 dark:text-white dark:border-zinc-700 text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
+                                No wins.
+                            </div>
+                        `;
+                }
+
+                const driverHTML = `
+                    <div id="driver-card" class="bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg border-t-4" style="border-color: ${palette.lightText};">
+                        <div class="grid md:grid-cols-3 gap-8 items-center">
+                            <div class="md:col-span-1">
+                                <img src="${driver.image}" alt="${driver.name}" class="rounded-lg shadow-md w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/FFF?text=Image+Not+Found';">
+                            </div>
+                            <div class="md:col-span-2">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white">${driver.name}</h1>
+                                        <a href="${teamPageUrl}" class="group inline-flex items-center mt-2">
+                                            <div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center">
+                                                ${teamLogoUrl ? `<img src="${teamLogoUrl}" alt="${driver.team} logo" class="max-w-full max-h-full object-contain dark:invert">` : ''}
+                                            </div>
+                                            <p class="text-xl team-link-color transition-colors duration-300">${driver.team}</p>
+                                        </a>
+                                         <div class="flex items-center mt-2">
+                                            <div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center">
+                                                ${flagUrl ? `<img src="${flagUrl}" alt="${driver.country}" class="h-6 rounded-sm">` : ''}
+                                            </div>
+                                            <p class="text-lg text-gray-500 dark:text-gray-500">${driver.country}</p>
+                                        </div>
+                                    </div>
+                                    <div class="driver-number text-7xl font-bold team-color-text">
+                                        ${driver.number}
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+                                    <div class="team-color-bg p-4 rounded-lg ring-1 team-color-ring">
+                                        <p class="text-sm font-medium team-color-text">${'Points'}</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.points}</p>
+                                    </div>
+                                    <div class="relative bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg group cursor-pointer">
+                                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Wins</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.wins}</p>
+                                        ${winsTooltipHTML}
+                                    </div>
+                                    <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
+                                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Podiums</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.podiums}</p>
+                                    </div>
+                                    <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
+                                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Poles</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.poles}</p>
+                                    </div>
+                                    <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
+                                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Fastest Laps</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.fastestLaps}</p>
+                                    </div>
+                                    <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg">
+                                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Best Finish</p>
+                                        <p class="text-3xl font-bold team-color-text">${driver.bestResult}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML = driverHTML;
+
+                // Also update border color on theme change
+                const driverCard = container.querySelector('#driver-card');
+                const updateBorderColor = () => {
+                    if (driverCard && team.palette) {
+                        const isDarkMode = document.documentElement.classList.contains('dark');
+                        const color = isDarkMode ? palette.darkText : palette.lightText;
+                        driverCard.style.borderColor = color;
+                    }
+                };
+                updateBorderColor();
+                new MutationObserver(updateBorderColor).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+            })
+            .catch(error => {
+                console.error('Error fetching driver data:', error);
+                container.innerHTML = '<p class="text-center text-red-500">Could not load driver data.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
