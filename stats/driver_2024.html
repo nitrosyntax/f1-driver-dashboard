@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" class="">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +11,9 @@
         tailwind.config = { darkMode: 'class' }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script>
         // Inline script to set theme instantly, preventing FOUC (Flash of Unstyled Content)
         const theme = localStorage.getItem('theme') || 'system';
@@ -30,6 +32,10 @@
         .dark .nav-link.active {
             background-color: #b91c1c; /* red-700 */
             color: #ffffff; /* white */
+        }
+        .driver-number {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1;
         }
     </style>
 </head>
@@ -185,19 +191,25 @@
                                     <img src="${driver.image}" alt="${driver.name}" class="rounded-lg shadow-md w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/FFF?text=Image+Not+Found';">
                                 </div>
                                 <div class="md:col-span-2">
-                                    <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white">${driver.name}</h1>
-                                    
-                                    <a href="${teamWebsiteUrl}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center mt-2">
-                                        <div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center">
-                                            ${teamLogoUrl ? `<img src="${teamLogoUrl}" alt="${driver.team} logo" class="max-w-full max-h-full object-contain dark:invert">` : ''}
+                                    <div class="flex items-start justify-between">
+                                        <div>
+                                            <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-white">${driver.name}</h1>
+                                            <a href="${teamWebsiteUrl}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center mt-2">
+                                                <div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center">
+                                                    ${teamLogoUrl ? `<img src="${teamLogoUrl}" alt="${driver.team} logo" class="max-w-full max-h-full object-contain dark:invert">` : ''}
+                                                </div>
+                                                <p class="text-xl text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors duration-300">${driver.team}</p>
+                                            </a>
+                                             <div class="flex items-center mt-2">
+                                                <div class="w-10 h-10 mr-4 flex-shrink-0 flex items-center justify-center">
+                                                    ${flagUrl ? `<img src="${flagUrl}" alt="${driver.country}" class="h-6 rounded-sm">` : ''}
+                                                </div>
+                                                <p class="text-lg text-gray-500 dark:text-gray-500">${driver.country}</p>
+                                            </div>
                                         </div>
-                                        <p class="text-xl text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors duration-300">${driver.team}</p>
-                                    </a>
-                                    <div class="flex items-center mt-2">
-                                        <div class="w-8 h-5 mr-3 flex-shrink-0 bg-gray-200 dark:bg-zinc-700 rounded-sm">
-                                            ${flagUrl ? `<img src="${flagUrl}" alt="${driver.country}" class="w-full h-full object-cover rounded-sm">` : ''}
+                                        <div class="driver-number text-7xl font-bold text-gray-200 dark:text-zinc-700">
+                                            ${driver.number}
                                         </div>
-                                        <p class="text-lg text-gray-500 dark:text-gray-500">${driver.country}</p>
                                     </div>
                                     
                                     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
@@ -241,4 +253,3 @@
     </script>
 </body>
 </html>
-
