@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Driver Standings</title>
+    <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script>
+        // Inline script to set theme instantly, preventing FOUC (Flash of Unstyled Content)
+        const theme = localStorage.getItem('theme') || 'system';
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        /* New active link style: Rounded rectangular box */
+        .nav-link.active {
+            background-color: #fee2e2; /* red-100 */
+            color: #b91c1c; /* red-700 */
+            border-radius: 0.375rem; /* rounded-md */
+        }
+        .dark .nav-link.active {
+            background-color: #b91c1c; /* red-700 */
+            color: #ffffff; /* white */
+        }
+        .driver-number {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1;
+        }
+        /* Rule for the dynamic hover colors */
+        .group:hover .dynamic-hover-color {
+            color: var(--team-color-light);
+        }
+        .dark .group:hover .dynamic-hover-color {
+            color: var(--team-color-dark);
+        }
+
+         .team-color-bar {
+            width: 8px;
+            height: 44px;
+            border-radius: 9999px;
+            background: var(--team-color-light);
+            flex-shrink: 0;
+        }
+        .dark .team-color-bar {
+            background: var(--team-color-dark);
+        }
+
+        /* minor helper to keep rows visually like F1 */
+        .driver-row { 
+            text-decoration: none;
+        }
+        .driver-row .name { 
+            color: var(--driver-name, #111827);
+        }
+        .driver-row .team { 
+            color: var(--driver-team, #6b7280);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
+
+    <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="../../index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
+                    <img src="../../images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
+                    <span>PilotProfile</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
+                    <a href="../../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    <button id="theme-toggle" class="text-red-600 dark:text-red-500 focus:outline-none text-lg w-6 h-6 flex items-center justify-center">
+                        <i class="fas fa-sun hidden" id="theme-icon-light"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="text-red-600 dark:text-red-500 focus:outline-none mr-4 text-lg w-6 h-6 flex items-center justify-center">
+                        <i class="fas fa-sun hidden" id="theme-icon-light-mobile"></i>
+                        <i class="fas fa-moon hidden" id="theme-icon-dark-mobile"></i>
+                        <i class="fas fa-desktop hidden" id="theme-icon-system-mobile"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900">
+            <a href="../../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="../../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
+            <a href="../../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12 flex-grow">
+        <div class="container mx-auto p-8">
+            <!-- 2024 Hero -->
+            <div class="bg-white dark:bg-zinc-900 p-12 rounded-lg shadow-lg text-center border-t-4 border-red-600">
+                <h1 class="text-5xl font-bold text-gray-800 dark:text-white mb-4">
+                    2024 Driver Standings
+                </h1>
+                <p class="mt-3 text-gray-600 dark:text-gray-300 text-lg">Official points classification after the latest round.</p>
+            </div>
+
+            <div class="mt-8 bg-white dark:bg-zinc-900 rounded-t-lg shadow overflow-hidden">
+                <div class="hidden md:flex items-center px-4 py-3 text-sm font-semibold border-b border-gray-200 dark:border-zinc-800">
+                    <div class="w-10 text-center text-gray-500">Pos</div>
+                    <div class="w-2"></div>
+                    <div class="flex-1">Driver</div>
+                    <div class="w-28 text-right">Points</div>
+                </div>
+            
+                <div id="driver-list" role="list" class="divide-y divide-gray-200 dark:divide-zinc-800">
+                    <!-- Drivers list will be injected by javascript directly -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
+        <div class="container mx-auto text-center py-6 px-4">
+             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Made by 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
+                <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">nitrosyntax</a>.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="../../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const driverListContainer = document.getElementById('driver-list');
+
+            Promise.all([
+                fetch('2024.json').then(res => res.json()),
+                fetch('teams_2024.json').then(res => res.json()) 
+            ])
+            .then(([drivers, teams]) => {
+                if (!drivers || drivers.length === 0) {
+                    driverListContainer.innerHTML = '<p class="text-center p-8">No driver data found.</p>';
+                    return;
+                }
+
+                // Ensure points are numbers
+                drivers.forEach(d => { d.points = (typeof d.points === 'number') ? d.points : Number(d.points) || 0; });
+
+                // Sort drivers by points in descending order
+                drivers.sort((a,b) => {
+                    if (b.points !== a.points) return b.points - a.points;
+                    return a.name.localeCompare(b.name);
+                });
+                
+                const listHTML = drivers.map((driver, index) => {
+                    const team = teams.find(t => t.name === driver.team);
+                    const palette = team ? team.palette : { lightText: '#6b7280', darkText: '#9ca3af' };
+                    
+                    const style = `--team-color-light: ${palette.lightText}; --team-color-dark: ${palette.darkText};`;
+                    
+                    const driverPageUrl = `driver_2024.html?name=${encodeURIComponent(driver.name)}`;
+                    const teamPageUrl = `team_2024.html?name=${encodeURIComponent(driver.team)}`;
+                    const position = index+1;
+                    const points = driver.points ?? 0;
+
+                    return `
+                    <a role="listitem" href="${driverPageUrl}"
+                        class="driver-row block md:flex items-center p-4 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors duration-150"
+                        style="${style}" aria-label="${driver.name} — ${driver.team} — ${points} points">
+                        <div class="w-10 text-center text-gray-500 dark:text-gray-400 text-lg font-bold">${position}</div>
+
+                        <div class="mx-4">
+                            <div class="team-color-bar" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="flex-1 min-w-0">
+                            <p class="name font-semibold text-lg text-gray-800 dark:text-white truncate">${driver.name}</p>
+                            <p class="team text-sm text-gray-500 dark:text-gray-400 truncate">${driver.team}</p>
+                        </div>
+
+                        <div class="w-28 text-right">
+                            <div class="inline-flex items-center bg-gray-100 dark:bg-zinc-800 rounded-md px-4 py-2">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">${points}</span>
+                                <span class="ml-2 text-xs font-semibold text-gray-500 dark:text-gray-400">PTS</span>
+                            </div>
+                        </div>
+                    </a>`;
+                }).join('');
+
+                driverListContainer.innerHTML = listHTML;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                driverListContainer.innerHTML = '<p class="text-center text-red-500 p-8">Could not load driver standings.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
