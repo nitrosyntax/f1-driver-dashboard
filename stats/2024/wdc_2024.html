@@ -39,13 +39,6 @@
             font-family: 'Oswald', sans-serif;
             line-height: 1;
         }
-        /* Rule for the dynamic hover colors */
-        .group:hover .dynamic-hover-color {
-            color: var(--team-color-light);
-        }
-        .dark .group:hover .dynamic-hover-color {
-            color: var(--team-color-dark);
-        }
 
          .team-color-bar {
             width: 8px;
@@ -58,15 +51,14 @@
             background: var(--team-color-dark);
         }
 
-        /* minor helper to keep rows visually like F1 */
-        .driver-row { 
-            text-decoration: none;
+        /* Rule for the dynamic hover colors */
+        .driver-row a.name:hover,
+        .driver-row a.team:hover {
+            color: var(--team-color-light);
         }
-        .driver-row .name { 
-            color: var(--driver-name, #111827);
-        }
-        .driver-row .team { 
-            color: var(--driver-team, #6b7280);
+        .dark .driver-row a.name:hover,
+        .dark .driver-row a.team:hover {
+            color: var(--team-color-dark);
         }
     </style>
 </head>
@@ -160,10 +152,8 @@
                     return;
                 }
 
-                // Ensure points are numbers
                 drivers.forEach(d => { d.points = (typeof d.points === 'number') ? d.points : Number(d.points) || 0; });
 
-                // Sort drivers by points in descending order
                 drivers.sort((a,b) => {
                     if (b.points !== a.points) return b.points - a.points;
                     return a.name.localeCompare(b.name);
@@ -176,13 +166,13 @@
                     const style = `--team-color-light: ${palette.lightText}; --team-color-dark: ${palette.darkText};`;
                     
                     const driverPageUrl = `driver_2024.html?name=${encodeURIComponent(driver.name)}`;
-                    const teamPageUrl = `team_2024.html?name=${encodeURIComponent(driver.team)}`;
+                    const teamPageUrl = `teams_2024.html?name=${encodeURIComponent(driver.team)}`;
                     const position = index+1;
                     const points = driver.points ?? 0;
 
                     return `
-                    <a role="listitem" href="${driverPageUrl}"
-                        class="driver-row block md:flex items-center p-4 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors duration-150"
+                    <div role="listitem"
+                        class="driver-row block md:flex items-center p-4"
                         style="${style}" aria-label="${driver.name} — ${driver.team} — ${points} points">
                         <div class="w-10 text-center text-gray-500 dark:text-gray-400 text-lg font-bold">${position}</div>
 
@@ -191,8 +181,8 @@
                         </div>
 
                         <div class="flex-1 min-w-0">
-                            <p class="name font-semibold text-lg text-gray-800 dark:text-white truncate">${driver.name}</p>
-                            <p class="team text-sm text-gray-500 dark:text-gray-400 truncate">${driver.team}</p>
+                            <a href="${driverPageUrl}" class="name font-semibold text-lg text-gray-800 dark:text-white truncate transition-colors duration-300">${driver.name}</a>
+                            <a href="${teamPageUrl}" class="team block text-sm text-gray-500 dark:text-gray-400 truncate transition-colors duration-300">${driver.team}</a>
                         </div>
 
                         <div class="w-28 text-right">
@@ -201,7 +191,7 @@
                                 <span class="ml-2 text-xs font-semibold text-gray-500 dark:text-gray-400">PTS</span>
                             </div>
                         </div>
-                    </a>`;
+                    </div>`;
                 }).join('');
 
                 driverListContainer.innerHTML = listHTML;
