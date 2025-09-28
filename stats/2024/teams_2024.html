@@ -48,6 +48,7 @@
         .dark .group:hover .driver-name-hover {
             color: var(--team-color-dark);
         }
+        /* New class for team-colored text */
         .team-color-text { color: var(--team-color-light); }
         .dark .team-color-text { color: var(--team-color-dark); }
     </style>
@@ -57,10 +58,7 @@
     <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="../../index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
-                    <img src="../../images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
-                    <span>PilotProfile</span>
-                </a>
+                <a href="../../index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
                 
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="../../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
@@ -119,8 +117,11 @@
             const teamName = params.get('name');
 
             const countryCodeMapping = {
-                'United Kingdom': 'gb', 'Italy': 'it', 'Switzerland': 'ch', 'United States': 'us',
-                'Austria': 'at', 'France': 'fr', 'Luxembourg': 'lu', 'Japan': 'jp'
+                'Thailand': 'th', 'Spain': 'es', 'United Kingdom': 'gb', 'Finland': 'fi',
+                'Argentina': 'ar', 'Australia': 'au', 'France': 'fr', 'Germany': 'de',
+                'New Zealand': 'nz', 'Monaco': 'mc', 'Denmark': 'dk', 'Mexico': 'mx',
+                'Japan': 'jp', 'Netherlands': 'nl', 'China': 'cn', 'USA': 'us', 'Canada': 'ca',
+                'Italy': 'it', 'Switzerland': 'ch', 'United States': 'us', 'Austria': 'at', 'Luxembourg': 'lu'
             };
 
             if (!teamName) {
