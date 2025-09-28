@@ -38,7 +38,10 @@
     <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                <a href="index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
+                    <img src="images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
+                    <span>PilotProfile</span>
+                </a>
                 
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
@@ -104,9 +107,6 @@
 
     <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
         <div class="container mx-auto text-center py-6 px-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-                &copy; <span id="year"></span> PilotProfile. All Rights Reserved.
-            </p>
              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 Made by 
                 <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
@@ -116,9 +116,6 @@
     </footer>
     
     <script src="script.js"></script>
-    <script>
-        // Sets the current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    
 </body>
 </html>

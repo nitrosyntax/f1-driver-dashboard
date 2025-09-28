@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PilotProfile | F1 Driver Dashboard</title>
-    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <title>2024 Stats</title>
+    <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <script>
         // Inline script to set theme instantly, preventing FOUC (Flash of Unstyled Content)
         const theme = localStorage.getItem('theme') || 'system';
@@ -22,6 +25,7 @@
         }
     </script>
     <style>
+        /* New active link style: Rounded rectangular box */
         .nav-link.active {
             background-color: #fee2e2; /* red-100 */
             color: #b91c1c; /* red-700 */
@@ -31,6 +35,17 @@
             background-color: #b91c1c; /* red-700 */
             color: #ffffff; /* white */
         }
+        .driver-number {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1;
+        }
+        /* Rule for the dynamic hover colors */
+        .group:hover .dynamic-hover-color {
+            color: var(--team-color-light);
+        }
+        .dark .group:hover .dynamic-hover-color {
+            color: var(--team-color-dark);
+        }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
@@ -38,12 +53,15 @@
     <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="../index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                <a href="../../index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
+                    <img src="../../images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
+                    <span>PilotProfile</span>
+                </a>
                 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
-                    <a href="../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    <a href="../../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
+                    <a href="../../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
                     <button id="theme-toggle" class="text-red-600 dark:text-red-500 focus:outline-none text-lg w-6 h-6 flex items-center justify-center">
                         <i class="fas fa-sun hidden" id="theme-icon-light"></i>
                         <i class="fas fa-moon hidden" id="theme-icon-dark"></i>
@@ -64,9 +82,9 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900">
-            <a href="../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
-            <a href="../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
-            <a href="../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
+            <a href="../../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="../../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
+            <a href="../../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
         </div>
     </nav>
 
@@ -79,14 +97,16 @@
                 </h1>
                 <p class="mt-3 text-gray-600 dark:text-gray-300 text-lg">Diving into the data behind the 2024 championship.</p>
             </div>
+
+            <!-- Driver Cards Grid -->
+            <div id="driver-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                <!-- Driver cards will be dynamically inserted here -->
+            </div>
         </div>
     </main>
 
     <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
         <div class="container mx-auto text-center py-6 px-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-                &copy; <span id="year"></span> PilotProfile. All Rights Reserved.
-            </p>
              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 Made by 
                 <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
@@ -95,10 +115,75 @@
         </div>
     </footer>
     
-    <script src="../script.js"></script>
+    <script src="../../script.js"></script>
     <script>
-        // Sets the current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const driverGrid = document.getElementById('driver-grid');
+
+            const teamLogoMapping = {
+                'Williams Racing': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/williams.png',
+                'Aston Martin Aramco Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/aston%20martin.png',
+                'MoneyGram Haas F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/haas.png',
+                'Stake F1 Team Kick Sauber': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1704282202/content/dam/fom-website/2018-redesign-assets/team%20logos/kick%20sauber.png',
+                'BWT Alpine F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/alpine.png',
+                'Mercedes-AMG PETRONAS Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/mercedes.png',
+                'Visa Cash App RB Formula One Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1706118021/content/dam/fom-website/2018-redesign-assets/team%20logos/rb.png',
+                'Scuderia Ferrari': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/ferrari.png',
+                'McLaren F1 Team': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/mclaren.png',
+                'Oracle RedBull Racing': 'https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/red%20bull.png'
+            };
+
+            Promise.all([
+                fetch('2024.json').then(res => res.json()),
+                fetch('teams_2024.json').then(res => res.json())
+            ])
+            .then(([drivers, teams]) => {
+                if (!drivers || drivers.length === 0) {
+                    driverGrid.innerHTML = '<p class="text-center col-span-full">No driver data found.</p>';
+                    return;
+                }
+
+                drivers.sort((a, b) => a.team.localeCompare(b.team));
+
+                const cardsHTML = drivers.map(driver => {
+                    const team = teams.find(t => t.name === driver.team);
+                    const teamLogoUrl = teamLogoMapping[driver.team] || '';
+                    const palette = team ? team.palette : { lightText: '#dc2626', darkText: '#f87171' };
+                    
+                    const style = `--team-color-light: ${palette.lightText}; --team-color-dark: ${palette.darkText};`;
+                    const driverPageUrl = `driver_2024.html?name=${encodeURIComponent(driver.name)}`;
+                    const teamPageUrl = `teams_2024.html?name=${encodeURIComponent(driver.team)}`;
+
+                    return `
+                    <div class="bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 border border-gray-200 dark:border-zinc-700"
+                       style="${style}">
+                        <a href="${driverPageUrl}" class="block">
+                            <img src="${driver.image}" alt="${driver.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/FFF?text=Image+Not+Found';">
+                        </a>
+                        <div class="p-6">
+                            <a href="${driverPageUrl}" class="group">
+                                <h3 class="dynamic-hover-color text-xl font-bold text-gray-800 dark:text-white transition-colors duration-300">${driver.name}</h3>
+                            </a>
+                            <a href="${teamPageUrl}" class="group">
+                                <div class="flex items-center mt-1">
+                                    <div class="w-8 h-8 mr-2 flex-shrink-0 flex items-center justify-center">
+                                        ${teamLogoUrl ? `<img src="${teamLogoUrl}" alt="${driver.team} logo" class="max-w-full max-h-full object-contain dark:invert">` : ''}
+                                    </div>
+                                    <p class="dynamic-hover-color text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">${driver.team}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+
+                driverGrid.innerHTML = cardsHTML;
+            })
+            .catch(error => {
+                console.error('Error fetching driver data:', error);
+                driverGrid.innerHTML = '<p class="text-center text-red-500 col-span-full">Could not load driver data.</p>';
+            });
+        });
     </script>
 </body>
 </html>

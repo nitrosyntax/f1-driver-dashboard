@@ -1,0 +1,192 @@
+[
+	{
+		"name": "Mercedes-AMG PETRONAS Formula One Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/mercedes.png",
+		"base": "Brackley, United Kingdom",
+		"teamPrincipal": "Toto Wolff",
+		"teamPrincipalCountry": "Austria",
+		"teamPrincipalImage": "https://images.ctfassets.net/1fvlg6xqnm65/7irotDBrNXo8LVLOEfPXx6/ce897c19be26022de1461fbd1204d429/M485887.jpg",
+		"chassis": "W15",
+		"powerUnit": "Mercedes",
+		"color": "teal-500",
+		"palette": {
+			"lightText": "#00A19C",
+			"darkText": "#62D0CB",
+			"lightBg": "#E0F5F4",
+			"darkBg": "rgba(0, 161, 156, 0.4)",
+			"lightRing": "#B3E8E6",
+			"darkRing": "#007E7A"
+		}
+	},
+	{
+		"name": "Oracle RedBull Racing",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/red%20bull.png",
+		"base": "Milton Keynes, United Kingdom",
+		"teamPrincipal": "Christian Horner",
+		"teamPrincipalCountry": "United Kingdom",
+		"teamPrincipalImage": "https://www.aljazeera.com/wp-content/uploads/2025/09/2025-07-06T101151Z_1954275964_UP1EL760SBQP1_RTRMADP_3_MOTOR-F1-BRITAIN-1758547776.jpg?resize=770%2C513&quality=80",
+		"chassis": "RB20",
+		"powerUnit": "Honda RBPT",
+		"color": "blue-700",
+		"palette": {
+			"lightText": "#0600EF",
+			"darkText": "#7F7DFF",
+			"lightBg": "#E6E6FF",
+			"darkBg": "rgba(6, 0, 239, 0.4)",
+			"lightRing": "#C2C1FF",
+			"darkRing": "#0400A3"
+		}
+	},
+	{
+		"name": "Scuderia Ferrari",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/ferrari.png",
+		"base": "Maranello, Italy",
+		"teamPrincipal": "Frédéric Vasseur",
+		"teamPrincipalCountry": "France",
+		"teamPrincipalImage": "https://cdn.ferrari.com/cms/network/media/img/resize/67dd79c5a91acb0020997147-scuderia-ferrari-hp-team-2025-red-vasseurf_mob?width=768&height=1024",
+		"chassis": "SF-24",
+		"powerUnit": "Ferrari",
+		"color": "red-600",
+		"palette": {
+			"lightText": "#dc2626",
+			"darkText": "#f87171",
+			"lightBg": "#fee2e2",
+			"darkBg": "rgba(220, 38, 38, 0.4)",
+			"lightRing": "#fecaca",
+			"darkRing": "#b91c1c"
+		}
+	},
+	{
+		"name": "McLaren F1 Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/mclaren.png",
+		"base": "Woking, United Kingdom",
+		"teamPrincipal": "Andrea Stella",
+		"teamPrincipalCountry": "Italy",
+		"teamPrincipalImage": "https://ichef.bbci.co.uk/ace/standard/2560/cpsprodpb/5dc3/live/2bd50ba0-5021-11ef-894a-b30f1ca6afb0.jpg",
+		"chassis": "MCL38",
+		"powerUnit": "Mercedes",
+		"color": "orange-500",
+		"palette": {
+			"lightText": "#FF8700",
+			"darkText": "#FFAC4D",
+			"lightBg": "#FFF3E6",
+			"darkBg": "rgba(255, 135, 0, 0.4)",
+			"lightRing": "#FFE0B3",
+			"darkRing": "#B35E00"
+		}
+	},
+	{
+		"name": "Aston Martin Aramco Formula One Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/aston%20martin.png",
+		"base": "Silverstone, United Kingdom",
+		"teamPrincipal": "Mike Krack",
+		"teamPrincipalCountry": "Luxembourg",
+		"teamPrincipalImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/content/dam/fom-website/manual/Misc/2022manual/WinterMarch/DSC08399.webp",
+		"chassis": "AMR24",
+		"powerUnit": "Mercedes",
+		"color": "green-500",
+		"palette": {
+			"lightText": "#006F62",
+			"darkText": "#2BD3BF",
+			"lightBg": "#E0F7F5",
+			"darkBg": "rgba(0, 111, 98, 0.4)",
+			"lightRing": "#B3EAE5",
+			"darkRing": "#00594F"
+		}
+	},
+	{
+		"name": "BWT Alpine F1 Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244412/content/dam/fom-website/2018-redesign-assets/team%20logos/alpine.png",
+		"base": "Enstone, United Kingdom",
+		"teamPrincipal": "Bruno Famin",
+		"teamPrincipalCountry": "France",
+		"teamPrincipalImage": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/fom-website/2024/Alpine/GettyImages-2158011793.webp",
+		"chassis": "A524",
+		"powerUnit": "Renault",
+		"color": "pink-500",
+		"palette": {
+			"lightText": "#EC008C",
+			"darkText": "#FF69B4",
+			"lightBg": "#FFE5F3",
+			"darkBg": "rgba(236, 0, 140, 0.4)",
+			"lightRing": "#FFC2E4",
+			"darkRing": "#A80063"
+		}
+	},
+	{
+		"name": "Williams Racing",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244414/content/dam/fom-website/2018-redesign-assets/team%20logos/williams.png",
+		"base": "Grove, United Kingdom",
+		"teamPrincipal": "James Vowles",
+		"teamPrincipalCountry": "United Kingdom",
+		"teamPrincipalImage": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/fom-website/2025/Williams/AtlassianWilliamsRacing_JamesVowles.webp",
+		"chassis": "FW46",
+		"powerUnit": "Mercedes",
+		"color": "blue-400",
+		"palette": {
+			"lightText": "#00A0DE",
+			"darkText": "#61D0F4",
+			"lightBg": "#E0F5FF",
+			"darkBg": "rgba(0, 160, 222, 0.4)",
+			"lightRing": "#B3E8FF",
+			"darkRing": "#007EAF"
+		}
+	},
+	{
+		"name": "Visa Cash App RB Formula One Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1706118021/content/dam/fom-website/2018-redesign-assets/team%20logos/rb.png",
+		"base": "Faenza, Italy",
+		"teamPrincipal": "Laurent Mekies",
+		"teamPrincipalCountry": "France",
+		"teamPrincipalImage": "https://media.formula1.com/image/upload/t_16by9Centre/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2025/F1_Grand_Prix_Of_Australia___Previews/2204782655.webp",
+		"chassis": "VCARB 01",
+		"powerUnit": "Honda RBPT",
+		"color": "blue-500",
+		"palette": {
+			"lightText": "#3b82f6",
+			"darkText": "#60a5fa",
+			"lightBg": "#eff6ff",
+			"darkBg": "rgba(59, 130, 246, 0.4)",
+			"lightRing": "#dbeafe",
+			"darkRing": "#2563eb"
+		}
+	},
+	{
+		"name": "Stake F1 Team Kick Sauber",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1704282202/content/dam/fom-website/2018-redesign-assets/team%20logos/kick%20sauber.png",
+		"base": "Hinwil, Switzerland",
+		"teamPrincipal": "Alessandro Alunni Bravi",
+		"teamPrincipalCountry": "Italy",
+		"teamPrincipalImage": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_Of_Singapore___Practice/2173293599.webp",
+		"chassis": "C44",
+		"powerUnit": "Ferrari",
+		"color": "lime-400",
+		"palette": {
+			"lightText": "#84CC16",
+			"darkText": "#A3E635",
+			"lightBg": "#F7FEE7",
+			"darkBg": "rgba(132, 204, 22, 0.4)",
+			"lightRing": "#E1F9B5",
+			"darkRing": "#65A30D"
+		}
+	},
+	{
+		"name": "MoneyGram Haas F1 Team",
+		"logo": "https://media.formula1.com/image/upload/f_auto/q_auto/v1677244413/content/dam/fom-website/2018-redesign-assets/team%20logos/haas.png",
+		"base": "Kannapolis, United States",
+		"teamPrincipal": "Ayao Komatsu",
+		"teamPrincipalCountry": "Japan",
+		"teamPrincipalImage": "https://cdn-8.motorsport.com/images/amp/0rGBMPm2/s1000/ayao-komatsu-team-principal-ha.jpg",
+		"chassis": "VF-24",
+		"powerUnit": "Ferrari",
+		"color": "gray-400",
+		"palette": {
+			"lightText": "#6b7280",
+			"darkText": "#d1d5db",
+			"lightBg": "#f3f4f6",
+			"darkBg": "rgba(156, 163, 175, 0.4)",
+			"lightRing": "#e5e7eb",
+			"darkRing": "#4b5563"
+		}
+	}
+]

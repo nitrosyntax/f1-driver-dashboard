@@ -38,7 +38,10 @@
     <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                <a href="index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
+                    <img src="images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
+                    <span>PilotProfile</span>
+                </a>
                 
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
@@ -81,21 +84,21 @@
 
             <div class="grid md:grid-cols-2 gap-8 mt-16 ">
                 <div class="flex flex-col items-center justify-center bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg text-center">
-                    <h2 class="text-2xl font-extrabold text-gray-800 dark:text-white mb-2">The Season in the Rearview</h2>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">The Season in the Rearview</h2>
                     <p class="mb-4 text-gray-600 dark:text-gray-300">
                         Look back at 2024 — the battles fought, the points scored, and the speed that set the tone for today.
                     </p>
-                    <a href="stats/2024.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 dark:bg-red-700 dark:hover:bg-red-600">
+                    <a href="stats/2024/2024.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 dark:bg-red-700 dark:hover:bg-red-600">
                         Relive 2024
                     </a>
                 </div>
 
                 <div class="flex flex-col items-center justify-center bg-white dark:bg-zinc-900 p-8 rounded-lg shadow-lg text-center">
-                    <h2 class="text-2xl font-extrabold text-gray-800 dark:text-white mb-2">On the Grid: 2025</h2>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">On the Grid: 2025</h2>
                     <p class="mb-4 text-gray-600 dark:text-gray-300">
                         Stay up to speed with the current championship — live data, fresh stats, and the story as it unfolds.
                     </p>
-                    <a href="stats/2025.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 dark:bg-red-700 dark:hover:bg-red-600">
+                    <a href="stats/2025/2025.html" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 dark:bg-red-700 dark:hover:bg-red-600">
                         Live 2025
                     </a>
                 </div>
@@ -106,9 +109,6 @@
 
     <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
         <div class="container mx-auto text-center py-6 px-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-                &copy; <span id="year"></span> PilotProfile. All Rights Reserved.
-            </p>
             <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 Made by 
                 <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
@@ -118,10 +118,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Sets the current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
     
 </body>
 </html>

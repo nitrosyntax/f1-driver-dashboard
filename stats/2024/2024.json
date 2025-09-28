@@ -1,290 +1,448 @@
 [
-    {
-        "name": "Alexander Albon",
-        "team": "Williams Racing",
-        "country": "Thailand",
-        "points": 12,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 7,
-        "image": "../images/albon.jpeg"
-    },
-    {
-        "name": "Fernando Alonso",
-        "team": "Aston Martin Aramco Formula One Team",
-        "country": "Spain",
-        "points": 70,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 2,
-        "bestResult": 5,
-        "image": "../images/alonso.jpeg"
-    },
-    {
-        "name": "Oliver Bearman",
-        "team": "MoneyGram Haas F1 Team",
-        "country": "United Kingdom",
-        "points": 7,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 7,
-        "image": "../images/bearman.jpeg"
-    },
-    {
-        "name": "Valtteri Bottas",
-        "team": "Stake F1 Team Kick Sauber",
-        "country": "Finland",
-        "points": 0,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 11,
-        "image": "../images/bottas.jpeg"
-    },
-    {
-        "name": "Franco Colapinto",
-        "team": "Williams Racing",
-        "country": "Argentina",
-        "points": 5,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 8,
-        "image": "../images/colapinto.jpeg"
-    },
-    {
-        "name": "Jack Doohan",
-        "team": "BWT Alpine F1 Team",
-        "country": "Australia",
-        "points": 0,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 15,
-        "image": "../images/doohan.jpeg"
-    },
-    {
-        "name": "Pierre Gasly",
-        "team": "BWT Alpine F1 Team",
-        "country": "France",
-        "points": 42,
-        "wins": 0,
-        "podiums": 1,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 3,
-        "image": "../images/gasly.jpeg"
-    },
-    {
-        "name": "Lewis Hamilton",
-        "team": "Mercedes-AMG PETRONAS Formula One Team",
-        "country": "United Kingdom",
-        "points": 223,
-        "wins": 2,
-        "podiums": 5,
-        "poles": 0,
-        "fastestLaps": 2,
-        "bestResult": 1,
-        "image": "../images/hamilton.jpeg"
-    },
-    {
-        "name": "Nico Hulkenberg",
-        "team": "MoneyGram Haas F1 Team",
-        "country": "Germany",
-        "points": 41,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 6,
-        "image": "../images/hulkenberg.jpeg"
-    },
-    {
-        "name": "Liam Lawson",
-        "team": "Visa Cash App RB Formula One Team",
-        "country":"New Zealand",
-        "points": 4,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 9,
-        "image": "../images/lawson/jpeg"
-    },
-    {
-        "name": "Charles Leclerc",
-        "team": "Scuderia Ferrari",
-        "country": "Monaco",
-        "points": 356,
-        "wins": 3,
-        "podiums": 13,
-        "poles": 3,
-        "fastestLaps": 3,
-        "bestResult": 1,
-        "image": "../images/leclerc.jpeg"
-    },
-    {
-        "name": "Kevin Magnussen",
-        "team": "MoneyGram Haas F1 Team",
-        "country": "Denmark",
-        "points": 16,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 1,
-        "bestResult": 7,
-        "image": "../images/magnussen.jpeg"
-    },
-    {
-        "name": "Lando Norris",
-        "team": "McLaren F1 Team",
-        "country": "United Kingdom",
-        "points": 374,
-        "wins": 4,
-        "podiums": 13,
-        "poles": 8,
-        "fastestLaps": 6,
-        "bestResult": 1,
-        "image": "../images/norris.jpeg"
-    },
-    {
-        "name": "Esteban Ocon",
-        "team": "BWT Alpine F1 Team",
-        "country": "France",
-        "points": 23,
-        "wins": 0,
-        "podiums": 1,
-        "poles": 0,
-        "fastestLaps": 1,
-        "bestResult": 2,
-        "image": "../images/ocon.jpeg"
-    },
-    {
-        "name": "Sergio Perez",
-        "team": "Oracle RedBull Racing",
-        "country": "Mexico",
-        "points": 152,
-        "wins": 0,
-        "podiums": 4,
-        "poles": 0,
-        "fastestLaps": 1,
-        "bestResult": 2,
-        "image": "../images/perez.jpeg"
-    },
-    {
-        "name": "Oscar Piastri",
-        "team":"McLaren F1 Team",
-        "country": "Australia",
-        "points": 292,
-        "wins": 2,
-        "podiums": 8,
-        "poles": 0,
-        "fastestLaps": 1,
-        "bestResult": 1,
-        "image": "../images/piastri.jpeg"
-    },
-    {
-        "name": "Daniel Ricciardo",
-        "team":"Visa Cash App RB Formula One Team",
-        "country": "Australia",
-        "points": 12,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 1,
-        "bestResult": 8,
-        "image": "../images/ricciardo.jpeg"
-    },
-    {
-        "name": "George Russell",
-        "team": "Mercedes-AMG PETRONAS Formula One Team",
-        "country": "United Kingdom",
-        "points": 245,
-        "wins": 2,
-        "podiums": 4,
-        "poles": 4,
-        "fastestLaps": 2,
-        "bestResult": 1,
-        "image": "../images/russell.jpeg"
-    },
-    {
-        "name": "Carlos Sainz",
-        "team": "Scuderia Ferrari",
-        "country": "Spain",
-        "points": 290,
-        "wins": 2,
-        "podiums": 9,
-        "poles": 1,
-        "fastestLaps": 1,
-        "bestResult": 1,
-        "image": "../images/sainz.jpeg"
-    },
-    {
-        "name": "Logan Sargeant",
-        "team": "Williams Racing",
-        "country": "USA",
-        "points": 0,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 11,
-        "image": "../images/sargeant.jpeg"
-    },
-    {
-        "name": "Lance Stroll",
-        "team": "Aston Martin Aramco Formula One Team",
-        "country": "Canada",
-        "points": 24,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 6,
-        "image": "../images/stroll.jpeg"
-    },
-    {
-        "name": "Yuki Tsunoda",
-        "team": "Visa Cash App RB Formula One Team",
-        "country": "Japan",
-        "points": 30,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 7,
-        "image": "../images/tsunoda.jpeg"
-    },
-    {
-        "name": "Max Verstappen",
-        "team": "Oracle RedBull Racing",
-        "country": "Netherlands",
-        "points": 437,
-        "wins": 9,
-        "podiums": 14,
-        "poles": 8,
-        "fastestLaps": 3,
-        "bestResult": 1,
-        "image": "../images/verstappen.jpeg"
-    },
-    {
-        "name": "Guanyu Zhou",
-        "team":"Stake F1 Team Kick Sauber",
-        "country": "China",
-        "points": 4,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0,
-        "fastestLaps": 0,
-        "bestResult": 8,
-        "image": "../images/zhou.jpeg"
-    }
+	{
+		"name": "Alexander Albon",
+		"number": 23,
+		"team": "Williams Racing",
+		"country": "Thailand",
+		"points": 12,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 7,
+		"image": "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2024/02/05155714/alex-albon-williams-suit-2024-planetf1.jpg"
+	},
+	{
+		"name": "Fernando Alonso",
+		"number": 14,
+		"team": "Aston Martin Aramco Formula One Team",
+		"country": "Spain",
+		"points": 70,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 2,
+		"bestResult": 5,
+		"image": "https://e0.365dm.com/24/02/2048x1152/skysports-fernando-alonso-aston-martin_6452825.jpg?20240212091908"
+	},
+	{
+		"name": "Oliver Bearman",
+		"number": 38,
+		"team": "MoneyGram Haas F1 Team",
+		"country": "United Kingdom",
+		"points": 7,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 7,
+		"image": "https://cdn.racingnews365.com/2024/_975xAUTO_fit_center-center_85_none/Bearman_2024-03-08-114433_yvbq.jpg?v=1709898583"
+	},
+	{
+		"name": "Valtteri Bottas",
+		"number": 77,
+		"team": "Stake F1 Team Kick Sauber",
+		"country": "Finland",
+		"points": 0,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 11,
+		"image": "https://www.racefans.net/wp-content/uploads/2024/07/racefansdotnet-24-07-31-22-23-41-6-XPB_1295453_HiRes.jpg"
+	},
+	{
+		"name": "Franco Colapinto",
+		"number": 43,
+		"team": "Williams Racing",
+		"country": "Argentina",
+		"points": 5,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 8,
+		"image": "https://res.cloudinary.com/prod-f2f3/ar_16:9,c_fill,dpr_1.0,f_auto,g_auto,h_563,w_1000/v1/f2/global/articles/2024/08_August/GettyImages-2158382692"
+	},
+	{
+		"name": "Jack Doohan",
+		"number": 61,
+		"team": "BWT Alpine F1 Team",
+		"country": "Australia",
+		"points": 0,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 15,
+		"image": "https://res.cloudinary.com/prod-f2f3/image/upload/v1710861131/f2/global/articles/2024/03_March/GettyImages-1398256776.jpg"
+	},
+	{
+		"name": "Pierre Gasly",
+		"number": 10,
+		"team": "BWT Alpine F1 Team",
+		"country": "France",
+		"points": 42,
+		"wins": 0,
+		"podiums": 1,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 3,
+		"image": "https://f1chronicle.com/wp-content/uploads/2024/02/7f25635e-90ad-bbae-5cd7-d49377972bd9-scaled.jpeg"
+	},
+	{
+		"name": "Lewis Hamilton",
+		"number": 44,
+		"team": "Mercedes-AMG PETRONAS Formula One Team",
+		"country": "United Kingdom",
+		"points": 223,
+		"wins": 2,
+		"racesWon": [
+			{
+				"raceName": "British GP",
+				"countryCode": "gb",
+				"circuitName": "Silverstone"
+			},
+			{
+				"raceName": "Singapore GP",
+				"countryCode": "sg",
+				"circuitName": "Marina Bay"
+			}
+		],
+		"podiums": 5,
+		"poles": 0,
+		"fastestLaps": 2,
+		"bestResult": 1,
+		"image": "https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2023/06/05122007/lewis-hamilton-smiling-cap-planetf1.jpg"
+	},
+	{
+		"name": "Nico Hulkenberg",
+		"number": 27,
+		"team": "MoneyGram Haas F1 Team",
+		"country": "Germany",
+		"points": 41,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 6,
+		"image": "https://speedcafe.us/wp-content/uploads/XPB_1254602_HiRes-1200x800.jpg"
+	},
+	{
+		"name": "Liam Lawson",
+		"number": 30,
+		"team": "Visa Cash App RB Formula One Team",
+		"country": "New Zealand",
+		"points": 4,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 9,
+		"image": "https://res.cloudinary.com/prod-f2f3/image/upload/v1727363056/f2/global/articles/2024/09_September/L_Lawson_VC_078.jpg"
+	},
+	{
+		"name": "Charles Leclerc",
+		"number": 16,
+		"team": "Scuderia Ferrari",
+		"country": "Monaco",
+		"points": 356,
+		"wins": 3,
+		"racesWon": [
+			{
+				"raceName": "Monaco GP",
+				"countryCode": "mc",
+				"circuitName": "Monaco"
+			},
+			{
+				"raceName": "Belgian GP",
+				"countryCode": "be",
+				"circuitName": "Spa-Francorchamps"
+			},
+			{
+				"raceName": "Mexico City GP",
+				"countryCode": "mx",
+				"circuitName": "Autódromo Hermanos Rodríguez"
+			}
+		],
+		"podiums": 13,
+		"poles": 3,
+		"fastestLaps": 3,
+		"bestResult": 1,
+		"image": "https://www.total-motorsport.com/wp-content/uploads/2024/09/09-azeirbajian-gp-quali_cf58fbd7-fbd3-4a44-84d8-72bd9462e095-scaled.jpg"
+	},
+	{
+		"name": "Kevin Magnussen",
+		"number": 20,
+		"team": "MoneyGram Haas F1 Team",
+		"country": "Denmark",
+		"points": 16,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 1,
+		"bestResult": 7,
+		"image": "https://cdn-9.motorsport.com/images/amp/0oObbgo0/s1000/kevin-magnussen-haas-f1-team-o.jpg"
+	},
+	{
+		"name": "Lando Norris",
+		"number": 4,
+		"team": "McLaren F1 Team",
+		"country": "United Kingdom",
+		"points": 374,
+		"wins": 4,
+		"racesWon": [
+			{
+				"raceName": "Miami GP",
+				"countryCode": "us",
+				"circuitName": "Miami"
+			},
+			{
+				"raceName": "Dutch GP",
+				"countryCode": "nl",
+				"circuitName": "Zandvoort"
+			},
+			{
+				"raceName": "Italian GP",
+				"countryCode": "it",
+				"circuitName": "Monza"
+			},
+			{
+				"raceName": "Azerbaijan GP",
+				"countryCode": "az",
+				"circuitName": "Baku"
+			}
+		],
+		"podiums": 13,
+		"poles": 8,
+		"fastestLaps": 6,
+		"bestResult": 1,
+		"image": "https://static.independent.co.uk/2024/01/26/16/401516a1f5b6061f1a649ecc3c64814aY29udGVudHNlYXJjaGFwaSwxNzA2MzU5MTAw-2.73443631.jpg"
+	},
+	{
+		"name": "Esteban Ocon",
+		"number": 31,
+		"team": "BWT Alpine F1 Team",
+		"country": "France",
+		"points": 23,
+		"wins": 0,
+		"podiums": 1,
+		"poles": 0,
+		"fastestLaps": 1,
+		"bestResult": 2,
+		"image": "https://media.alpinecars.com/wp-content/uploads/2024/06/f59a7e1e5b6c58c4020c2592d64b77e4-l.jpg.webp"
+	},
+	{
+		"name": "Sergio Perez",
+		"number": 11,
+		"team": "Oracle RedBull Racing",
+		"country": "Mexico",
+		"points": 152,
+		"wins": 0,
+		"podiums": 4,
+		"poles": 0,
+		"fastestLaps": 1,
+		"bestResult": 2,
+		"image": "https://cdn-7.motorsport.com/images/amp/YXRPr4o0/s1000/sergio-perez-red-bull-racing.jpg"
+	},
+	{
+		"name": "Oscar Piastri",
+		"number": 81,
+		"team": "McLaren F1 Team",
+		"country": "Australia",
+		"points": 292,
+		"wins": 2,
+		"racesWon": [
+			{
+				"raceName": "Hungarian GP",
+				"countryCode": "hu",
+				"circuitName": "Hungaroring"
+			},
+			{
+				"raceName": "Qatar GP",
+				"countryCode": "qa",
+				"circuitName": "Lusail"
+			}
+		],
+		"podiums": 8,
+		"poles": 0,
+		"fastestLaps": 1,
+		"bestResult": 1,
+		"image": "https://performancegarage.com.au/images/blog/6/Oscar_Piastri_mfgz-jb.jpg"
+	},
+	{
+		"name": "Daniel Ricciardo",
+		"number": 3,
+		"team": "Visa Cash App RB Formula One Team",
+		"country": "Australia",
+		"points": 12,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 1,
+		"bestResult": 8,
+		"image": "https://media.formula1.com/image/upload/t_16by9North/f_auto/q_auto/v1708604056/trackside-images/2024/Formula_1_Testing_in_Bahrain___Day_2/2030089502.jpg"
+	},
+	{
+		"name": "George Russell",
+		"number": 63,
+		"team": "Mercedes-AMG PETRONAS Formula One Team",
+		"country": "United Kingdom",
+		"points": 245,
+		"wins": 2,
+		"racesWon": [
+			{
+				"raceName": "Las Vegas GP",
+				"countryCode": "us",
+				"circuitName": "Las Vegas"
+			},
+			{
+				"raceName": "Abu Dhabi GP",
+				"countryCode": "ae",
+				"circuitName": "Yas Marina"
+			}
+		],
+		"podiums": 4,
+		"poles": 4,
+		"fastestLaps": 2,
+		"bestResult": 1,
+		"image": "https://sportsbase.io/images/gpfans/copy_1200x800/51de75a156edccb323e3f56b430b591552597659.jpg"
+	},
+	{
+		"name": "Carlos Sainz",
+		"number": 55,
+		"team": "Scuderia Ferrari",
+		"country": "Spain",
+		"points": 290,
+		"wins": 2,
+		"racesWon": [
+			{
+				"raceName": "Australian GP",
+				"countryCode": "au",
+				"circuitName": "Albert Park"
+			},
+			{
+				"raceName": "Brazilian GP",
+				"countryCode": "br",
+				"circuitName": "Interlagos"
+			}
+		],
+		"podiums": 9,
+		"poles": 1,
+		"fastestLaps": 1,
+		"bestResult": 1,
+		"image": "https://cdn-5.motorsport.com/images/amp/254WeZn0/s1000/carlos-sainz-ferrari.jpg"
+	},
+	{
+		"name": "Logan Sargeant",
+		"number": 2,
+		"team": "Williams Racing",
+		"country": "USA",
+		"points": 0,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 11,
+		"image": "https://media.formula1.com/image/upload/f_auto/q_auto/v1701443224/fom-website/2023/Miscellaneous/sargeant-portrait-2023-1.png"
+	},
+	{
+		"name": "Lance Stroll",
+		"number": 18,
+		"team": "Aston Martin Aramco Formula One Team",
+		"country": "Canada",
+		"points": 24,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 6,
+		"image": "https://www.racefans.net/wp-content/uploads/2024/03/racefansdotnet-7190821_HiRes.jpg"
+	},
+	{
+		"name": "Yuki Tsunoda",
+		"number": 22,
+		"team": "Visa Cash App RB Formula One Team",
+		"country": "Japan",
+		"points": 30,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 7,
+		"image": "https://global.honda/content/dam/site/global-en/newsroom-new/cq_img/news/2024/06/c240608eng/c240608eng_01.jpg"
+	},
+	{
+		"name": "Max Verstappen",
+		"number": 1,
+		"team": "Oracle RedBull Racing",
+		"country": "Netherlands",
+		"points": 437,
+		"wins": 9,
+		"racesWon": [
+			{
+				"raceName": "Bahrain GP",
+				"countryCode": "bh",
+				"circuitName": "Sakhir"
+			},
+			{
+				"raceName": "Saudi Arabian GP",
+				"countryCode": "sa",
+				"circuitName": "Jeddah"
+			},
+			{
+				"raceName": "Japanese GP",
+				"countryCode": "jp",
+				"circuitName": "Suzuka"
+			},
+			{
+				"raceName": "Chinese GP",
+				"countryCode": "cn",
+				"circuitName": "Shanghai"
+			},
+			{
+				"raceName": "Emilia Romagna GP",
+				"countryCode": "it",
+				"circuitName": "Imola"
+			},
+			{
+				"raceName": "Canadian GP",
+				"countryCode": "ca",
+				"circuitName": "Montreal"
+			},
+			{
+				"raceName": "Spanish GP",
+				"countryCode": "es",
+				"circuitName": "Catalunya"
+			},
+			{
+				"raceName": "Austrian GP",
+				"countryCode": "at",
+				"circuitName": "Red Bull Ring"
+			},
+			{
+				"raceName": "United States GP",
+				"countryCode": "us",
+				"circuitName": "COTA"
+			}
+		],
+		"podiums": 14,
+		"poles": 8,
+		"fastestLaps": 3,
+		"bestResult": 1,
+		"image": "https://media.formula1.com/image/upload/t_16by9North/c_lfill,w_3392/q_auto/v1740000000/trackside-images/2024/F1_Grand_Prix_of_Las_Vegas/2186584606.webp"
+	},
+	{
+		"name": "Guanyu Zhou",
+		"number": 24,
+		"team": "Stake F1 Team Kick Sauber",
+		"country": "China",
+		"points": 4,
+		"wins": 0,
+		"podiums": 0,
+		"poles": 0,
+		"fastestLaps": 0,
+		"bestResult": 8,
+		"image": "https://autogear.pt/wp-content/uploads/file_10646247866624f4729165c9.26775660.jpg"
+	}
 ]

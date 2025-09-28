@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PilotProfile | F1 Driver Dashboard</title>
-    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -38,12 +38,15 @@
     <nav class="bg-white dark:bg-zinc-900 shadow-md fixed top-0 left-0 right-0 z-10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="../index.html" class="text-2xl font-bold text-gray-800 dark:text-white">PilotProfile</a>
+                <a href="../../index.html" class="flex items-center text-2xl font-bold text-gray-800 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300">
+                    <img src="../../images/favicon.svg" alt="PilotProfile Logo" class="h-8 mr-2">
+                    <span>PilotProfile</span>
+                </a>
                 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
-                    <a href="../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    <a href="../../index.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="../../stats.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium active">Stats</a>
+                    <a href="../../contact.html" class="nav-link text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
                     <button id="theme-toggle" class="text-red-600 dark:text-red-500 focus:outline-none text-lg w-6 h-6 flex items-center justify-center">
                         <i class="fas fa-sun hidden" id="theme-icon-light"></i>
                         <i class="fas fa-moon hidden" id="theme-icon-dark"></i>
@@ -64,9 +67,9 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900">
-            <a href="../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
-            <a href="../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
-            <a href="../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
+            <a href="../../index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Home</a>
+            <a href="../../stats.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Stats</a>
+            <a href="../../contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700">Contact</a>
         </div>
     </nav>
 
@@ -86,9 +89,6 @@
 
     <footer class="bg-white dark:bg-zinc-900 shadow-inner mt-auto">
         <div class="container mx-auto text-center py-6 px-4">
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-                &copy; <span id="year"></span> PilotProfile. All Rights Reserved.
-            </p>
              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                 Made by 
                 <a href="#" class="underline hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">ghanti</a> and 
@@ -97,10 +97,6 @@
         </div>
     </footer>
     
-    <script src="../script.js"></script>
-    <script>
-        // Sets the current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="../../script.js"></script>
 </body>
 </html>
