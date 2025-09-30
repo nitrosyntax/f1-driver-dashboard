@@ -66,6 +66,14 @@
         .dark .driver-row a.team:hover {
             color: var(--team-color-dark);
         }
+
+        /* Style for SVG text inversion */
+        .dark .svg-text {
+            fill: white;
+        }
+        .svg-shape {
+            fill: currentColor;
+        }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
@@ -148,6 +156,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             const driverListContainer = document.getElementById('driver-list');
 
+            const countryCodeMapping = {
+                'Thailand': 'th', 'Spain': 'es', 'United Kingdom': 'gb', 'Finland': 'fi',
+                'Argentina': 'ar', 'Australia': 'au', 'France': 'fr', 'Germany': 'de',
+                'New Zealand': 'nz', 'Monaco': 'mc', 'Denmark': 'dk', 'Mexico': 'mx',
+                'Japan': 'jp', 'Netherlands': 'nl', 'China': 'cn', 'USA': 'us', 'Canada': 'ca'
+            };
+
             Promise.all([
                 fetch('2024.json').then(res => res.json()),
                 fetch('teams_2024.json').then(res => res.json()) 
@@ -176,6 +191,16 @@
                     const position = index+1;
                     const points = driver.points ?? 0;
 
+                    const driverCountryCode = countryCodeMapping[driver.country];
+                    const flagUrl = driverCountryCode ? `https://flagcdn.com/w40/${driverCountryCode}.png` : '';
+                    
+                    let teamLogoHTML = '';
+                    if (team && team.logoCode) {
+                        teamLogoHTML = team.logoCode;
+                    } else if (team) {
+                        teamLogoHTML = `<img src="${team.logo}" alt="${driver.team} logo" class="max-w-full max-h-full object-contain dark:invert">`;
+                    }
+
                     return `
                     <div role="listitem" class="driver-row flex items-center p-2 md:p-4" style="${style}" aria-label="${driver.name} — ${driver.team} — ${points} points">
                         <div class="w-8 md:w-10 text-center text-gray-500 dark:text-gray-400 text-base md:text-lg font-bold">${position}</div>
@@ -183,8 +208,16 @@
                             <div class="team-color-bar" aria-hidden="true"></div>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <a href="${driverPageUrl}" class="name font-semibold text-base md:text-lg text-gray-800 dark:text-white truncate transition-colors duration-300">${driver.name}</a>
-                            <a href="${teamPageUrl}" class="team block text-xs md:text-sm text-gray-500 dark:text-gray-400 truncate transition-colors duration-300">${driver.team}</a>
+                            <a href="${driverPageUrl}" class="name flex items-center font-semibold text-base md:text-lg text-gray-800 dark:text-white truncate transition-colors duration-300">
+                                ${flagUrl ? `<div class="w-6 h-5 mr-3 flex-shrink-0 flex items-center justify-center"><img src="${flagUrl}" alt="${driver.country}" class="max-h-full max-w-full rounded-sm shadow"></div>` : ''}
+                                <span>${driver.name}</span>
+                            </a>
+                            <a href="${teamPageUrl}" class="team flex items-center text-xs md:text-sm text-gray-500 dark:text-gray-400 truncate transition-colors duration-300 mt-1">
+                                <div class="w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center text-gray-800 dark:text-gray-300">
+                                    ${teamLogoHTML}
+                                </div>
+                                <span>${driver.team}</span>
+                            </a>
                         </div>
                         <div class="ml-auto pl-2">
                             <div class="inline-flex items-center bg-gray-100 dark:bg-zinc-800 rounded-md px-3 py-1 md:px-4 md:py-2">
